@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -10,7 +13,9 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+
+        return String.format("%" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -19,7 +24,9 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+
+        return String.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -28,7 +35,13 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        String once = stringToBeRepeated;
+        for (int i = 0; i < numberOfTimeToRepeat-1; i++) {
+
+            stringToBeRepeated += once ;
+        }
+
+        return stringToBeRepeated;
     }
 
     /**
@@ -36,7 +49,16 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        string =string.replace(" ","");
+        char[] chars = string.toCharArray();
+
+        for (char c : chars) {
+            if(!Character.isLetter(c)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -44,7 +66,15 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        string =string.replace(" ","");
+        char[] chars = string.toCharArray();
+
+        for (char c : chars) {
+            if(!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -52,6 +82,11 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+
+
+        if(string.contains("&")){
+            return true;
+        }return false;
+
     }
 }
