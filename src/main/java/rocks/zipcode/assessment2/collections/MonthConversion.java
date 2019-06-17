@@ -48,7 +48,11 @@ public class MonthConversion {
      * @return true if the monthNumber is in the keySet
      */
     public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+        if(myMap.containsKey(monthNumber)){
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -56,7 +60,14 @@ public class MonthConversion {
      * @return true if the monthName is in the valueSet
      */
     public Boolean isValidMonth(String monthName) {
-        return null;
+
+        for(String name : myMap.values()){
+            if(name.equals(monthName)){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -71,6 +82,8 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
+
+        myMap.put(monthNumber,monthName);
 
     }
 }

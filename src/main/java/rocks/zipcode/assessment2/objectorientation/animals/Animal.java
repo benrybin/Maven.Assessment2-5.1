@@ -22,7 +22,7 @@ public class Animal {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -30,7 +30,7 @@ public class Animal {
     }
 
     public Person getOwner() {
-        return owner;
+        return this.owner;
     }
 
     public void setOwner(Person owner) {
