@@ -19,10 +19,10 @@ public class PredicateUtilities {
      */
     public static Boolean isOdd(Integer value) {
 
-        if(!(value % 2 ==0)){
-            return true;
+        if(value % 2 ==0){
+            return false;
         }
-        return null;
+        return true;
     }
 
     /**
@@ -30,7 +30,12 @@ public class PredicateUtilities {
      * @return true if `value` is a multiple of 3
      */
     public static Boolean isMultipleOf3(Integer value) {
-        return null;
+        if(value % 3 ==0){
+            return true;
+        }
+        return false;
+
+
     }
 
     /**
@@ -40,7 +45,11 @@ public class PredicateUtilities {
      * @return true if `value` is a multiple of `multiple`
      */
     public static Boolean isMultipleOfN(Integer value, Integer multiple) {
-        return null;
+        if(value % multiple ==0){
+            return true;
+        }
+        return false;
+
     }
 
     /**
@@ -48,6 +57,9 @@ public class PredicateUtilities {
      * @return true if `string` starts with a capital letter
      */
     public static Boolean startsWithCapitalLetter(String string) {
-        return null;
+        if(Character.isUpperCase(string.charAt(0))){
+            return true;
+        }
+        return false;
     }
 }
